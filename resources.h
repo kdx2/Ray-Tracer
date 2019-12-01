@@ -5,14 +5,14 @@
 
 namespace vo { // vector operations
     using namespace std;
-    
+
     void print(vector<float>);
 
     float getMagnitude(vector<float>);
     float dot(vector<float>, vector<float>);
 
     vector<float> createPoint(float x, float y, float z);
-    vector<float> create(float x, float y, float z);
+    vector<float> createVector(float x, float y, float z);
 
     vector<float> add(vector<float>, vector<float>);
     vector<float> subtract(vector<float>, vector<float>);

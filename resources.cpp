@@ -15,7 +15,7 @@ namespace vo {
 
     void print(vector<float> vec) {
         if (vec.size() == 3) {
-            cout << "Incomplete array size (x,y,z): ";
+            cout << "Incomplete vector size (x,y,z): ";
             for (int i=0; i<vec.size(); i++)
                 cout << vec[i] << ", ";
                 cout << endl;
@@ -23,9 +23,9 @@ namespace vo {
         }
 
         switch (static_cast<int>(vec[dim::w])) {
-        case 0:
-            cout << "Point (x,y,z): "; break;
         case 1:
+            cout << "Point (x,y,z): "; break;
+        case 0:
             cout << "Vector (x,y,z): "; break;
         default:
             cout << "Undefined type (x,y,z): "; break;
@@ -46,7 +46,7 @@ namespace vo {
         return vec;
     }
 
-    vector<float> create(float x, float y, float z) {
+    vector<float> createVector(float x, float y, float z) {
         vector<float> vec = vector<float>(0);
         vec.push_back(x);
         vec.push_back(y);
