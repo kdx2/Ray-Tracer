@@ -4,6 +4,14 @@
 #include <vector>
 
 namespace vo { // vector operations
+    
+    enum dim {
+        x = 0,
+        y = 1,
+        z = 2,
+        w = 3
+    };
+
     using namespace std;
 
     void print(vector<float>);

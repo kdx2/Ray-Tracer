@@ -5,6 +5,29 @@
 using namespace std;
 using namespace vo;
 
+
+struct projectile {
+    vector<float> position; // point
+    vector<float> velocity; // vector
+} ;
+
+struct environment {
+    vector<float> gravity; // vector
+    vector<float> wind; // vector
+} ;
+
+projectile tick(projectile proj, environment env) {
+    vector<float> pos = vo::add(proj.position, proj.velocity);
+    vector<float> vel = vo::add(
+                                vo::add(proj.velocity, env.gravity),
+                                env.wind);
+    return projectile{
+        position: pos,
+        velocity: vel
+    };
+}
+
+
 int main() {
 
     std::cout << "Welcome to Ray-Tracer" << endl;
@@ -56,4 +79,26 @@ int main() {
     cout << "Cross product vector:" << endl;
     auto rezCross = vo::cross(v, p);
     vo::print(rezCross);
+
+    // Make projectile
+    cout << "Shooting a projectile" << endl;
+    auto pro = projectile{
+        position: vo::createPoint(0.0, 1.0, 0.0), 
+        velocity: vo::normalize(createVector(1.0, 1.0, 0.0))
+    };
+    auto env = environment{
+        gravity: vo::createVector(0.0, -0.1, 0.0),
+        wind: vo::createVector(-0.01, 0, 0)
+    };
+    int count = 0;
+    while (pro.position[dim::y] > 0) {
+        pro = tick(pro, env);
+        ++count;
+        cout << count << ". ";
+        cout << "p: (pos) ";
+            vo::print(pro.position); 
+        cout << "   p: (vel) "; 
+            vo::print(pro.velocity); 
+        cout << endl;
+    }
 }

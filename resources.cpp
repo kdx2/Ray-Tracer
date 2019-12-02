@@ -10,6 +10,7 @@ enum dim {
     w = 3
 };
 
+
 namespace vo {
     using namespace std;
 
