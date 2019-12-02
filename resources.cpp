@@ -3,14 +3,6 @@
 #include <functional> 
 #include "resources.h"
 
-enum dim {
-    x = 0,
-    y = 1,
-    z = 2,
-    w = 3
-};
-
-
 namespace vo {
     using namespace std;
 
@@ -43,6 +35,15 @@ namespace vo {
         vec.push_back(y);
         vec.push_back(z);
         vec.push_back(1.0);
+
+        return vec;
+    }    
+    
+    vector<float> createColour(float x, float y, float z) {
+        vector<float> vec = vector<float>(0);
+        vec.push_back(x);
+        vec.push_back(y);
+        vec.push_back(z);
 
         return vec;
     }

@@ -20,6 +20,7 @@ namespace vo { // vector operations
     float dot(vector<float>, vector<float>);
 
     vector<float> createPoint(float x, float y, float z);
+    vector<float> createColour(float x, float y, float z);
     vector<float> createVector(float x, float y, float z);
 
     vector<float> add(vector<float>, vector<float>);

@@ -2,6 +2,8 @@
 #include <vector>
 #include <iomanip>
 #include "resources.h"
+
+#include "tests/colours.h"
 using namespace std;
 using namespace vo;
 
@@ -101,4 +103,6 @@ int main() {
             vo::print(pro.velocity); 
         cout << endl;
     }
+
+    // Canvas
 }
